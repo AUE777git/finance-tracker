@@ -1,0 +1,218 @@
+/* Базовые сбросы стилей и шрифты */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-color: #f4f7f6;
+  --card-bg: #ffffff;
+  --text-main: #333333;
+  --text-muted: #666666;
+  --primary: #4a90e2;
+  --income-color: #2ec4b6;
+  --expense-color: #e71d36;
+  --border-radius: 12px;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.6;
+  padding: 40px 20px;
+}
+
+/* Главный контейнер приложения */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+h3 {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: var(--text-main);
+}
+
+/* Карточка баланса */
+.balance-board {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.balance-board h2 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+#total-balance {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-main);
+  display: block;
+  margin-top: 5px;
+}
+
+/* Сетка доходов и расходов */
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.stat-box {
+  padding: 15px;
+  border-radius: 8px;
+  background: var(--bg-color);
+}
+
+.stat-box h3 {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  margin-bottom: 5px;
+}
+
+.stat-box p {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.stat-box.income p {
+  color: var(--income-color);
+}
+
+.stat-box.expense p {
+  color: var(--expense-color);
+}
+
+/* Форма добавления операции */
+.transaction-form-box {
+  background: var(--card-bg);
+  padding: 25px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.15);
+}
+
+.btn {
+  width: 100%;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn:hover {
+  background-color: #357abd;
+}
+
+/* Список истории операций */
+.history-box {
+  background: var(--card-bg);
+  padding: 25px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+.list {
+  list-style-type: none;
+}
+
+.list li {
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border-right: 5px solid #ccc;
+  transition: var(--transition);
+}
+
+/* Цветовые маркеры для списка */
+.list li.income-item {
+  border-right-color: var(--income-color);
+}
+
+.list li.expense-item {
+  border-right-color: var(--expense-color);
+}
+
+.list li span.amount {
+  font-weight: 600;
+}
+
+/* Кнопка удаления транзакции */
+.delete-btn {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  color: #ff4d4d;
+  font-size: 1.2rem;
+  line-height: 1;
+  padding: 0 5px;
+  margin-left: 10px;
+  opacity: 0.5;
+  transition: var(--transition);
+}
+
+.delete-btn:hover {
+  opacity: 1;
+  transform: scale(1.2);
+}
