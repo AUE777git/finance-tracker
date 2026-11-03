@@ -3,60 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Трекер финансов</title>
-  <link rel="stylesheet" href="/src/style.css">
+  <title>Умный трекер финансов (React + TS)</title>
 </head>
 <body>
-  <div class="container">
-    <h1>Умный трекер финансов</h1>
+  
+  <!-- Проверьте эту строку! React ищет именно её -->
+  <div id="root"></div>
 
-    <!-- Блок общего баланса -->
-    <div class="balance-board">
-      <h2>Ваш баланс: <span id="total-balance">0</span> ₸</h2>
-      <div class="stats">
-        <div class="stat-box income">
-          <h3>Доходы</h3>
-          <p id="total-income">0 ₸</p>
-        </div>
-        <div class="stat-box expense">
-          <h3>Расходы</h3>
-          <p id="total-expense">0 ₸</p>
-        </div>
-      </div>
-    </div>
+  <!-- Подключение скрипта-точки входа -->
+  <script type="module" src="/src/main.tsx"></script>
 
-    <!-- Форма добавления транзакции -->
-    <div class="transaction-form-box">
-      <h3>Добавить операцию</h3>
-      <form id="transaction-form">
-        <div class="form-group">
-          <label for="text">Описание</label>
-          <input type="text" id="text" placeholder="Например: Продукты, Зарплата..." required>
-        </div>
-        <div class="form-group">
-          <label for="amount">Сумма</label>
-          <input type="number" id="amount" placeholder="Введите сумму..." min="1" required>
-        </div>
-        <div class="form-group">
-          <label for="type">Тип операции</label>
-          <select id="type">
-            <option value="expense">Расход</option>
-            <option value="income">Доход</option>
-          </select>
-        </div>
-        <button type="submit" class="btn">Добавить</button>
-      </form>
-    </div>
-
-    <!-- Список истории транзакций -->
-    <div class="history-box">
-      <h3>История операций</h3>
-      <ul id="transaction-list" class="list">
-        <!-- Сюда JavaScript будет динамически добавлять элементы -->
-      </ul>
-    </div>
-  </div>
-
-  <script type="module" src="/src/main.ts"></script>
 </body>
 </html>
